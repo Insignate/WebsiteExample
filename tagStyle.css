@@ -71,20 +71,35 @@ footer > a:visited {
 footer > a:hover {
   color: #9ff;
 }
+input {
+  border-width: 2px;
+  border-radius: 4px;
+}
+input:invalid,
+select:invalid {
+  animation: border-attention 3s infinite;
+}
+input:focus:valid,
+select:focus:valid {
+  border-color: green;
+}
 
-button {
+button,
+input[type="submit"] {
   border: solid 3px green;
   border-radius: 6px;
   color: white;
   background-color: black;
-  transition: bacground-color 0.3s, color 0.3s, box-shadow 0.3s;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
   font-size: 1em;
 }
-button:hover {
+button:hover,
+input[type="submit"]:hover {
   background-color: #040;
   box-shadow: 0 0 20px rgb(0, 255, 0);
 }
-button:active {
+button:active,
+input[type="submit"]:active {
   border-color: #484;
   color: black;
   background-color: #484;

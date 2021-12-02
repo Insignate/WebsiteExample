@@ -4,6 +4,7 @@
     
     <link rel="stylesheet" href="specificStyle.css">
     <link rel="stylesheet" href="tagStyle.css">
+    <script type="text/javascript" src="./index.js" defer></script>
     <meta name="viewport" content="width=device-width">
     <title>Hardware Registry</title>
 </head>
@@ -26,23 +27,58 @@
     
   </nav>
   <main>
-
+    <div id="datetime-container">
+      <label id="datetime-display"></label><br />
+      <form id="countdown-manager">
+        <input id="datetime-countdown" type="datetime-local" required /><br />
+        <input type="submit" id="btn-start-countdown" value="start countdown">
+      </form>
+    </div>
     <fieldset class="fieldset-float border-attention" id="register-computer">
       <legend>Register Computer</legend>
       <form class="forms2">
         <label for="manufacturer">Manufacturer:&nbsp;</label>
-        <input id="manufacturer" type="text" />
+        <input list="manufacturer" type="text" maxlength="100" required />
+        <datalist id="manufacturer">
+          <option value="HP">
+          <option value="Lenovo">
+          <option value="Acer">
+          <option value="Dell">
+        </datalist>
         <label for="model">Model:&nbsp;</label>
-        <input id="model"type="text" />
+        <input id="model"type="text" maxlength="100" required />
         <label for="sn">Serial Number:&nbsp;</label>
-        <input id="sn" type="text" />
+        <input id="sn" type="text" maxlength="10" pattern="[0-9]+" required />
         <label for="processor">Processor:&nbsp;</label>
-        <input id="processor" type="text" />
+        <input id="processor" type="text" maxlength="100" required />
         <label for="memory">Memory:&nbsp;</label>
-        <input id="memory" type="text" />
-        <label for="storage">Storage Drive:&nbsp;</label>
-        <input id="storage" type="text" />
-        <button type="submit">Register Computer</button>
+        <select id="memory" required >
+          <option>---</option>
+          <option value="1">8GB</option>
+          <option value="2">16GB</option>
+          <option value="3">32GB</option>
+        </select>
+        <label for="storage">Storage Drive In GB:&nbsp;</label>
+        <input id="storage" type="number" min="80" max="1000" required />
+        <label for="quantity" >Quantity: </label>
+        <input id="quantity" type="range" min="1" max="10" required />
+        <label for="new">New:</label>
+        <input id="new" type="checkbox" />
+        <label for="notes" maxlength="300">Notes: </label>
+        <textarea id="notes" ></textarea>
+        <fieldset>
+          <legend>Case Color</legend>
+          <input type="radio" id="color1" name="colorcase">
+          <label for="color1">Black</label>
+          <input type="radio" id="color2" name="colorcase">
+          <label for="color2">White</label>
+          <input type="radio" id="color3" name="colorcase">
+          <label for="color3">Red</label>
+        </fieldset>
+        
+        <input type="submit" value="Register Computer" />
+        <button type="button">Cancel</button>
+        <button type="button">Reset From</button>
       </form>
     </fieldset>
     <fieldset class="fieldset-float border-attention" id="edit-computer">

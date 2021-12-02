@@ -37,6 +37,16 @@
   grid-template-columns: auto auto;
   row-gap: 4px;
   column-gap: 4px;
+  grid-column: 4 / span 2;
+}
+
+.forms2 > fieldset {
+  grid-column: 1 / span 2;
+}
+
+.forms2 > textarea {
+  max-width: 217px;
+  max-height: 150px;
 }
 
 .border-attention {
@@ -55,6 +65,47 @@
   position: absolute;
 }
 
+#datetime-container {
+  padding: 4px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  border-left: solid 2px;
+  border-top: solid 2px;
+  border-top-left-radius: 6px;
+  animation: clock-border 6s infinite;
+  background-color: black;
+  transition: height 0.3s;
+  height: 25px;
+}
+
+#countdown-manager {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+#datetime-container:hover {
+  height: 90px;
+}
+#datetime-container:hover > #countdown-manager {
+  opacity: 1;
+}
+
+@keyframes clock-border {
+  0% {
+    border-color: #0b0;
+    box-shadow: 0 0 4px 4px #060;
+  }
+  50% {
+    border-color: #4f4;
+    box-shadow: 0 0 4px 4px #292;
+  }
+  100% {
+    border-color: #0b0;
+    box-shadow: 0 0 4px 4px #060;
+  }
+}
+
 @keyframes border-blue {
   0% {
     border-color: rgb(54, 54, 255);
@@ -70,12 +121,15 @@
 @keyframes border-attention {
   0% {
     border-color: rgb(255, 0, 0);
+    box-shadow: 0 0 4px 4px rgb(128, 0, 0);
   }
   50% {
     border-color: rgb(255, 128, 0);
+    box-shadow: 0 0 4px 4px rgb(128, 64, 0);
   }
   100% {
     border-color: rgb(255, 0, 0);
+    box-shadow: 0 0 4px 4px rgb(128, 0, 0);
   }
 }
 

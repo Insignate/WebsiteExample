@@ -3,11 +3,18 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="tagStyle.css">
   <link rel="stylesheet" href="specificStyle.css">
-  
+  <script type="text/javascript" src="./index.js" defer></script>
   <meta name="viewport" content="width=device-width">
   <title>Hardware Registry</title>
 </head>
 <body>
+  <div id="datetime-container">
+    <label id="datetime-display"></label><br />
+    <form id="countdown-manager">
+      <input id="datetime-countdown" type="datetime-local" required /><br />
+      <input type="submit" id="btn-start-countdown" value="start countdown">
+    </form>
+  </div>
   <nav>
     <div class="nav-links">
       <div class="pull-up">
@@ -44,12 +51,13 @@
             <img class="inline-image" src="./images/sell.svg" alt="Sell" />
           </a> image on the navigation panel
         </p>
+        <p>All images were taken from <a href="https://www.svgrepo.com/">svgrepo.com</a></p>
       </div>
       <aside class="info">
         <p>This website was made for project purposes, please feel free to browser this website to your heart's content!</p>
       </aside>
     </div>
     
-    <footer>All images were taken from <a href="https://www.svgrepo.com/">svgrepo.com</a></footer>
+    <!-- <footer></footer> -->
   </main>
 </body>
