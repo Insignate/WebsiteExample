@@ -3,6 +3,7 @@
 const labelDateTime = document.getElementById('datetime-display');
 const formCountdown = document.getElementById('countdown-manager');
 const dtCountdown = document.getElementById('datetime-countdown');
+const resetButton = document.getElementById('btn-reset');
 
 let timeNow = 0;
 let countdownTo = 0;
@@ -12,6 +13,15 @@ setDate();
 setInterval(() => setDate(), 1000);
 
 formCountdown.addEventListener('submit', e => setCountdown(e));
+resetButton.addEventListener('click', () => {
+  document.getElementById('model').value = '';
+  document.getElementById('sn').value = '';
+  document.getElementById('processor').value = '';
+  document.getElementById('memory').selectedIndex = 0;
+  document.getElementById('manufacturer').value = '';
+  document.getElementById('storage').value = '';
+  
+})
 
 function setCountdown(e){
   clearInterval(countdownInterval);

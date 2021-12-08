@@ -12,16 +12,16 @@
   <nav>
     <div class="nav-links">
       <div class="pull-up">
-        <img src="./images/arrow.svg" alt="Open" />
+        <img src="./arrow.svg" alt="Open" />
       </div>
       <a href="index.html">
-        <img src="./images/home.svg" alt="Home" />
+        <img src="./home.svg" alt="Home" />
       </a>
       <a href="register.html">
-        <img src="./images/register.svg" alt="Register" />
+        <img src="./register.svg" alt="Register" />
       </a>
       <a href="sell.html">
-        <img src="./images/sell.svg" alt="Sell" />
+        <img src="./sell.svg" alt="Sell" />
       </a>
     </div>
     
@@ -38,8 +38,8 @@
       <legend>Register Computer</legend>
       <form class="forms2">
         <label for="manufacturer">Manufacturer:&nbsp;</label>
-        <input list="manufacturer" type="text" maxlength="100" required />
-        <datalist id="manufacturer">
+        <input id='manufacturer' list="manufacturer-list" type="text" maxlength="100" required />
+        <datalist id='manufacturer-list'>
           <option value="HP">
           <option value="Lenovo">
           <option value="Acer">
@@ -78,7 +78,7 @@
         
         <input type="submit" value="Register Computer" />
         <button type="button">Cancel</button>
-        <button type="button">Reset From</button>
+        <button id="btn-reset" type="button">Reset From</button>
       </form>
     </fieldset>
     <fieldset class="fieldset-float border-attention" id="edit-computer">
